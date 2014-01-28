@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Replace words",
+  "description": "This extension replaces words on the page.",
+  "version": "1.0",
+  "permissions":  [
+    "tabs", "http://*/", "https://*/"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+      "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Deminivanize"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["jquery.js", "replacer.js"]
+    }
+  ]
+}
